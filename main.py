@@ -1,12 +1,14 @@
 print("Bienvenido/a")
 nombre_de_usuario = input("escriba su nombre de usuario: ")
 contrasena = input("escriba una contraseña: ")
+email = input("ingrese correo")
 
 if len(contrasena) >= 8 and \
- any(letra.isupper() for letra in contrasena) and \
+ any(letra.isupper for letra in contrasena) and \
  any(letra.isdigit for letra in contrasena) and \
- any(letra in "@$-_*+" for letra in contrasena):
-   print("usuario creado")
+ any(letra in "@$-_*+" for letra in contrasena) and\
+   any(letra in "@." for letra in email):
+    print("usuario creado")
  
 else:
     print(" La contraseña debe tener:")
